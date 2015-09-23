@@ -1,0 +1,22 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		
+		var sumTill=function(number){
+		if (number <=0) {
+
+			return 1;
+		}
+		else
+		{
+			return(number+sumTill(number-1));
+		}
+	};
+
+		console.log(sumTill(2));
+		//alert("Hiiii");
+		</script>
+	</body>
+</html>

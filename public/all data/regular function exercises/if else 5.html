@@ -1,0 +1,40 @@
+<html>
+    
+    <body>
+        <h1>Hiiii</h1>
+        <script>
+			
+			
+		var checkPersonage=function(age)
+		{
+		var age=parseInt(prompt("Please enter your age: "));
+		console.log(typeof(age));
+			if(age===50)
+			{
+				alert("Speial discount");
+			}
+			else
+			{
+				alert("enter correct age");
+			}
+			if(age<=14)
+			{
+				alert("Not allowed");
+			}
+			else if(age>14 && age<65)
+			{
+				alert("Regular Price");
+			}
+			else
+			{
+				alert("enter valid age");
+			}
+
+			
+		};
+		checkPersonage();
+
+        </script>
+    </body>
+</html>
+

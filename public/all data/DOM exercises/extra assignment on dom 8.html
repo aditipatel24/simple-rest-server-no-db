@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p id="demo"></p>
+<div id="mydiv">This is main div</div>
+<form id="frm1"name="myForm" method="post">
+
+	<button type="button" value="submit" id="save" onclick="creatediv()">Click to View</button>
+ <br>
+
+</form> 
+
+		<script>
+		
+		function creatediv()
+		{	
+				var x = document.createElement("div");
+				x.setAttribute("width", "304");
+				x.setAttribute("width", "228");
+				x.setAttribute("id", "i1");
+				document.body.appendChild(x);
+				ig1();
+		}
+		function ig1()
+		{
+			document.getElementById("i1").innerHTML="This is innerHTML"
+			document.getElementById("mydiv").innerHTML="This is main innerHTML"
+
+		}
+		
+		
+</script>
+</body>
+</html>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+  		<script>
+		$(document).ready(function(){
+			//$('#mydiv').on('change',function(){
+			$('ul').on('click','li',chkfruit)
+			$('#add').on('click',addNF);
+			//});
+		});
+		function chkfruit(event)
+		{
+			var t =$(this);
+			console.log(t);
+			var pd=t.find('input[type="checkbox"]');
+			console.log(pd);
+			var tt =$(t).find('span').html();
+			console.log(t);
+			//var ttt =$(event.target.tagName);
+			//console.log(ttt);
+			if(event.target.tagName !== "INPUT")
+				{
+					if(pd.prop('checked')=== false)
+					{
+						pd.prop('checked',true);
+					}
+					else
+					{
+						pd.prop('checked',false);
+					}
+				}
+			if(pd.is(":checked"))
+			{
+				//$(ttt).prev().prop('checked',true);
+				$('#ViewDiv').append("<p>"+tt+"</p>");
+			}
+			else 
+			{
+				console.log("hi");
+				var rv=$('#ViewDiv').find('p');
+				console.log(rv);
+				for(var j=0;j<rv.length;j++)
+				{
+					if(tt===$(rv[j]).html() || ttt.html()===$(rv[j]).html())
+					{
+						rv[j].remove();
+						rv[j].remove('#ViewDiv');
+					}
+					//$(ttt).prev().prop('checked',false);
+				}
+				
+			}
+		}
+		function addNF()
+		{
+			console.log("hii");
+			var pp=prompt("Add more fruit:");
+			console.log(pp);
+			var chk = $('<input/>').attr({ type: 'checkbox', name:'fruit', value:pp})
+			var txt=$("<li><span>"+pp+"</span></li>");
+			console.log(txt.html());
+			console.log(chk);
+			txt.append(chk);
+			var aa=$('#mydiv').find('ul').append(txt);
+		}		
+				//if targeted element is not input then 
+				// change checked prop of checkbox				
+	
+</script>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+	<ul class="allchklist" style="list-style-type:none">
+	<li>
+		<input type="checkbox" name="fruit">
+		<span>Orange</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit">
+		<span>Mango</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit">
+		<span>Grape</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit">
+		<span>Strawberry</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit">
+		<span>Cherry</span>
+	</li>
+	<li>
+		<button type="button" value="submit" id="add">Add</button>
+	</li>
+	</ul>
+</div>
+
+<div id="ViewDiv" class="mdiv">
+</div>	
+
+</body>
+</html>

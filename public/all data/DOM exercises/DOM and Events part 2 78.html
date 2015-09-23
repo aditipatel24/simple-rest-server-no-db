@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1 id="demo">DOM exercises </h1>
+
+<input type="checkbox" name="fruits" value="orange">Orange<br>
+<input type="checkbox" name="fruits" value="cherry">Cherry<br>
+<input type="checkbox" name="fruits" value="grape">Grape<br>
+<input type="checkbox" name="fruits" value="watermelon">Watermelon<br>
+<input type="checkbox" name="fruits" value="kiwi">Kiwi<br>
+<input type="checkbox" name="fruits" value="rasberry">Rasberry<br>
+<input type="checkbox" name="fruits" value="blackberry">Blackberry<br>
+<input type="checkbox" name="fruits" value="apple">Apple<br>
+<input type="checkbox" name="fruits" value="banana">Banana<br>
+<input type="checkbox" name="fruits" value="mango">Mango<br>
+
+<button onclick="uncheck()">Uncheck</button>
+<button onclick="validate()">Validate</button>
+
+	<script type="text/javascript">
+		function uncheck() 
+		{
+			var x = document.getElementsByTagName("input");
+			console.log(x.value);
+			for(var i=0;i<=x.length;i++)
+			{
+				console.log(x[i]);
+				x[i].checked = false;
+			}
+		}
+		function validate() 
+		{
+			var y = document.getElementsByTagName("input");
+	
+			console.log(y);
+			for(var i=0;i<y.length;i++)
+			{
+			 if(y[i].checked == true)
+			 
+				alert(y[i].value);
+			}
+		}
+</script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p></p>
+
+<form name="myForm" method="post" onsubmit="Validate()">
+	First name: <input type="text" name="firstname" id="firstname">
+	<br><br>
+  Last name: <input type="text" name="lastname" id="lastname">
+  <br><br>
+  <input type="radio" name="gender" value="female" id="F"> Female
+  <br>
+  <input type="radio" name="gender" value="male" id="M"> Male
+  <br><br>
+   <select name="state" id="state">
+    <option value="s">State</option>
+    <option value="nj">NJ</option>
+    <option value="pa">PA</option>
+    <option value="ca">CA</option>
+    <option value="sc">SC</option>
+  </select>
+  <br><br>
+  <input type="checkbox" name="accept" value="accept" id="accept"> I ACCEPT
+  <br><br>
+  <input type="submit" value="Submit" onclick="Validate()">
+ <br>
+  
+		</form> 
+
+		<script>
+		function Validate()
+		{
+			var FN = document.getElementById("firstname"); 
+			var LN = document.getElementById("lastname"); 
+			var f=document.getElementById("F"); 
+			var m=document.getElementById("M"); 
+			var st=document.getElementById("state"); 
+			var ac=document.getElementById("accept"); 
+			var d=/[0-9]/;
+			if (FN.value === "" || LN.value === "" || FN.value.match(d))  
+			{  
+			 
+				FN.style.background ='Red'; 
+				LN.style.background ='Red'; 				
+			}  
+			//else
+			//{alert("tryagain");}
+			
+			if(f.checked == false && m.checked == false)
+			{
+				 alert("select at least one option");
+			}
+			
+			if(st.selectedIndex == 0)
+			{
+				 alert("select a state");
+			}
+			if(ac.checked == false )
+			{
+				 alert("Check the I accept box");
+			}
+		}
+</script>
+</body>
+</html>

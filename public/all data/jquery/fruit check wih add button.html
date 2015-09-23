@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+  		<script>
+		$(document).ready(function(){
+			//$('#mydiv').on('change',function(){
+			$('#mydiv').on('change','input[type="checkbox"]',chkfruit);
+			$('#add').on('click',addNF);
+			//}); 
+
+		});
+		function chkfruit()
+		{
+			var $input = $(this);
+			console.log(this);
+			if( $input.prop( "checked" ))
+			{
+				var add=$(this).val();
+				
+				$('#ViewDiv').append("<p>"+add+"</p>")
+				console.log(add);
+			}
+			else
+			{
+				var rv=$('#ViewDiv').find('p');
+				console.log(rv);
+				for(var j=0;j<rv.length;j++)
+				{
+					if(this.value===$(rv[j]).html())
+					{
+						rv[j].remove();
+					}
+				}
+			}
+		}
+		function addNF()
+		{
+			console.log("hii");
+			var pp=prompt("Add more fruit:");
+			console.log(pp);
+			var txt=$("<p>"+pp+"</p>");
+			console.log(txt.html());
+			var aa=$('#mydiv').append(txt);
+			var chk = $('<input/>').attr({ type: 'checkbox', name:'fruit', value:pp})
+			console.log(chk);
+		//	$('p').before(chk);
+			txt.append(chk);
+		}		
+			
+</script>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+	<input type="checkbox" name="fruit" value="orange">Orange
+	<br>
+	<input type="checkbox" name="fruit" value="mango">Mango
+	<br>
+	<input type="checkbox" name="fruit" value="grape">Grape
+	<br>
+	<input type="checkbox" name="fruit" value="strawberry">Strawberry
+	<br>
+	<input type="checkbox" name="fruit" value="cherry">Cherry
+	<br>
+	<button type="button" value="submit" id="add">Add</button>
+
+</div>
+
+<div id="ViewDiv" class="mdiv">
+</div>	
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<div id="result1">
+<p id="myP">I am a paragraph.</p>
+<div id="result">this is div element.</div>
+<img id="myImg" src="001.jpg" alt="Roses" width="304" height="228">	
+<br>
+</div>
+
+<ul id="mm">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+<input type="button" id="hideElems" value="Hide" onclick="Hide()">
+<input type="button" id="showElems" value="Show" onclick="Show()">
+<input type="button" id="moutmover" value="Mout Mover" onmouseover="Mover()" onmouseout="Mout()" >
+
+  
+
+	<script type="text/javascript">
+		function Hide() 
+		{
+			var x = document.getElementById("result1").style.visibility="hidden";
+						
+		}
+		function Show() 
+		{
+			var y = document.getElementById("result1").style.visibility="visible";
+		}
+		function Mout() 
+		{
+			var z= document.getElementById("mm").style.visibility="hidden";
+						
+		}
+		function Mover() 
+		{
+			var a= document.getElementById("mm").style.visibility="visible";
+						
+		}
+		
+</script>
+</body>
+</html>
+

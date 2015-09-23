@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p id="demo"></p>
+
+<form id="frm1"name="myForm" method="post">
+
+	<button type="button" value="submit" id="save" onclick="Image()">Click</button>
+ <br>
+
+</form> 
+
+		<script>
+		
+		function Image()
+		{	
+				var x = document.createElement("IMG");
+				x.setAttribute("src", "001.jpg");
+				x.setAttribute("width", "304");
+				x.setAttribute("width", "228");
+				x.setAttribute("alt", "Images");
+				x.setAttribute("id", "i1");
+				document.body.appendChild(x);
+				setTimeout ( "ig1()", 2000 );
+		}
+		function ig1()
+		{
+			document.getElementById("i1").src="002.jpg"
+			setTimeout ( "ig2()", 2000 );
+		}
+		function ig2()
+		{
+			document.getElementById("i1").src="003.jpg"
+			setTimeout ( "ig3()", 2000 );
+		}
+		function ig3()
+		{
+			document.getElementById("i1").src="004.jpg"
+			setTimeout ( "ig4()", 2000 );
+		}
+		function ig4()
+		{
+			document.getElementById("i1").src="005.jpg"
+		}
+		
+</script>
+</body>
+</html>
+

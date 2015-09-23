@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+<form id="frm1" name="myForm" method="post">
+	
+	<input type="checkbox" name="friut" value="orange">Orange
+	<br>
+	<input type="checkbox" name="fruit" value="mango">Mango
+	<br>
+	<input type="checkbox" name="friut" value="grape">Grape
+	<br>
+	<input type="checkbox" name="fruit" value="strawberry">Strawberry
+	<br>
+	<input type="checkbox" name="friut" value="cherry">Cherry
+	<br>
+	<button type="button" value="submit" id="add">Add</button>
+</form> 
+</div>
+
+<div id="ViewDiv" class="mdiv">
+	
+</div>
+		<script>
+	
+		var bt1 = document.getElementById("mydiv");
+		bt1.addEventListener("click",chkfruit);	
+		function chkfruit(event)
+		{
+			var x=event.target;
+			console.log(this);
+		
+			if(x.checked==true)
+			{
+				console.log("jkjkjk");
+				var c=document.createElement("li");
+				d = document.createTextNode(x.value);
+				var dd =c.appendChild(d);
+				console.log(dd);
+				y = document.getElementById("ViewDiv");
+				var cc=y.appendChild(c);
+				console.log(cc);
+			}
+			else if(x.checked==false)
+			{
+				var z=document.getElementsByTagName("li");
+				for(var j=0;j<z.length;j++)
+				{
+					if(x.value === z[j].innerHTML)
+					{
+						var e=document.getElementById("ViewDiv").removeChild(z[j]);
+						console.log(e);
+					}
+				}
+			}
+			else if(x.type=="button")
+			{
+				var pp = prompt("Add more fruit:");
+			//	console.log(p);
+				var n=document.createElement("span");
+				var n1=document.createTextNode(pp);
+
+				var chk = document.createElement("input");
+				chk.setAttribute("type","checkbox");
+				chk.setAttribute("value",pp);
+				chk.setAttribute("name","fruit");
+				n.appendChild(n1);
+				var pa = document.getElementById("mydiv");
+				var ck = pa.appendChild(chk);
+				var dcp = pa.appendChild(n);
+				console.log(dcp);
+			}	
+				
+		}
+</script>
+</body>
+</html>

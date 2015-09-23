@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+<img src="001.jpg"  height="150" width="150" id="im">
+<h1 id="i1">DOM exercises </h1>
+<p id="p1"></p>
+<input type ="text" id="t1">
+<p id="demo"></p>
+
+		<script>
+		document.getElementById("im").addEventListener("mouseover", mover);
+		var t=document.getElementById("t1");
+		console.log(t);
+		/*function moverImage()
+		{	
+				var x = document.createElement("IMG");
+				x.setAttribute("src", "001.jpg");
+				x.setAttribute("width", "304");
+				x.setAttribute("width", "228");
+				x.setAttribute("alt", "hi this is Images");
+				x.setAttribute("id", "i1");
+				document.body.appendChild(x);
+				mover();
+		}*/
+		function mover()
+		{
+		document.getElementById("i1").innerHTML="roses"
+		document.getElementById("p1").innerHTML=t.value;
+		}
+		
+		
+</script>
+</body>
+</html>
+

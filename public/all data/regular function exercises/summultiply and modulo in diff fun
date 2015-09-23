@@ -1,0 +1,26 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		
+		var sum=function(a,b){
+			var a=prompt("enter a:");
+			var b=prompt("enter b:");
+		return (Number(a)+ Number(b));
+		
+};
+alert(sum());
+		var mul=function(a,b){
+			
+				return (Number(a)* Number(b));
+		};
+		alert(mul());
+		var mod=function(a,b){
+				
+				return (Number(a)% Number(b));
+		};
+		alert(mod());
+		</script>
+	</body>
+</html>

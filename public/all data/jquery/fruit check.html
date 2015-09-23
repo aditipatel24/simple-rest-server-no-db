@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+  		<script>
+		$(document).ready(function(){
+			$('#mydiv').on('change','input[type="checkbox"]',function(){
+				var $input=$(this);
+				console.log(this);
+				if($input.is(":checked"))
+				{
+					var add=$(this).val();
+					$('#ViewDiv').append("<p>"+add+"</p>")
+					console.log(add);
+				}
+				else
+				{
+					var rv=$('#ViewDiv').find('p');
+					console.log(rv);
+					for(var j=0;j<rv.length;j++)
+					{
+						if(this.value===$(rv[j]).html())
+						{
+							rv[j].remove();
+						}
+					}
+				}
+			
+			}); 
+		});
+			
+</script>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+	<input type="checkbox" name="fruit" value="orange"><span>Orange</span>
+	<br>
+	<input type="checkbox" name="fruit" value="mango">Mango
+	<br>
+	<input type="checkbox" name="fruit" value="grape">Grape
+	<br>
+	<input type="checkbox" name="fruit" value="strawberry">Strawberry
+	<br>
+	<input type="checkbox" name="fruit" value="cherry">Cherry
+	<br>
+	<button type="button" value="submit" id="add">Add</button>
+
+</div>
+
+<div id="ViewDiv" class="mdiv">
+</div>	
+
+</body>
+</html>

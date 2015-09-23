@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+  		<script>
+		$(document).ready(function(){
+			$('ul').on('click','li',function(event){
+				var t =$(event.target);
+				var pd=$(t).find('input[type="checkbox"]');
+				var tt =t.find('label');
+				console.log(t);
+				console.log(tt);
+					console.log("hi");
+					console.log(pd);
+					if(t.click)
+					{
+						$(t).prev().attr('checked',true);
+						$('#ViewDiv').append("<p>"+t.html()+"</p>");
+					}
+					else
+					{	console.log("hi");
+						
+						$(t).prev().attr('checked',false);
+						var rv=$('#ViewDiv').find('p');
+						console.log(rv);
+						for(var j=0;j<rv.length;j++)
+						{
+							if(t.html()===$(rv[j]).html())
+							{
+								rv[j].remove();
+							}
+						}
+					}				
+			}); 
+		});
+			
+</script>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+	<ul class="allchklist" style="list-style-type:none">
+	<li>
+		<input type="checkbox" name="fruit" value="orange">
+		<label>Orange</label>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="mango">
+		<label>Mango</label>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="grape">
+		<label>Grape</label>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="strawberry">
+		<label>Strawberry</label>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="cherry">
+		<label>Cherry</label>
+	</li>
+	<li>
+		<button type="button" value="submit" id="add">Add</button>
+	</li>
+	</ul>
+</div>
+
+<div id="ViewDiv" class="mdiv">
+</div>	
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <HTML>
+    <HEAD>
+    <script>
+
+    var a,b,result;
+
+    function setValues()
+    {
+    a = Number(document.getElementById("a").Value);
+    b = Number(document.getElementById("b").Value);
+    }
+
+    function sum()
+    {
+    setValues();
+    result = a+b;
+    alert("The Sum For The Values Is "+result);
+    }
+ 
+    function multiply()
+    {
+    setValues();
+    result = a*b;
+    alert("The Product For The Values Is "+result);
+    }
+
+    function div()
+    {
+    setValues();
+    result = a/b;
+    alert("The Quotient For The Values Is "+result);
+    }
+
+    </script>
+
+    </HEAD>
+
+
+    <STYLE>
+    body
+    {
+    background-color: #b0c4de;
+    }
+
+     </STYLE>
+
+     <body>
+     <CENTER>
+     <H1><B><U> Fun Facts!</B></U></H1>
+     <H4>Did You Know There Are Over 7 Billion People In The World!!!</H4>
+     <div>
+     <input Id="a" Type="Text"/>
+     <input Id="b" Type="Text"/>
+     <input Type="Button"  onclick="sum()" Value="sum"/>
+     <input Type="Button"  onclick="multiply()" Value="multiply"/>
+     <input Type="Button"  onclick="div()" Value="divide"/>
+     </div>
+     </body>
+
+
+
+     </CENTER>
+
+
+
+
+
+
+    </HTML>

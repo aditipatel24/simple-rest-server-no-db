@@ -1,0 +1,22 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		
+
+		Date.prototype.addHours = function(hours) {
+            this.setHours(this.getHours() + hours);
+            return this;
+        };
+	
+		var now = new Date();
+		console.log(now);
+		console.log(now.addHours(2));
+		var now1 =new Date();
+		console.log(now1.addHours(4));
+		</script>
+	</body>
+</html>
+
+

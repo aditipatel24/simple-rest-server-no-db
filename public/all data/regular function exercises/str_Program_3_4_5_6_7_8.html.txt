@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>String Programs</title>
+	</head>
+	<body>
+		
+		<b>Character : </b><p id="ans"></p>
+		<input type="button" value ="Separate String" onclick="strSplit('JavaScript is fun!')"/>
+		<br><br>
+		<b>Sum : </b><p id="ans1"></p>
+		<b>Multiply : </b><p id="ans2"></p>
+		<b>Reverse String : </b><p id="ans3"></p>
+		<b>Longest Word Length : </b><p id="len"></p>
+		<b>Filter Long Words : </b><p id="ans4"></p>
+		
+		<script>
+			function check(x)
+			{
+				if(x.match("a") || x.match("e") || x.match("i") || x.match("o") || x.match("u"))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			
+			function strSplit(x)
+			{
+				var ans=x.split(" ");
+				alert(ans);
+			}
+			
+			function sum(x)
+			{
+				var i,sum=0;
+				for(i=0;i<x.length;i++)
+				{
+					sum+=x[i];
+				}
+				return sum;
+			}
+			
+			function multiply(x)
+			{
+				var i,mul=1;
+				for(i=0;i<x.length;i++)
+				{
+					mul*=x[i];
+				}
+				return mul;
+			}
+			
+			function findReverse(x)
+			{
+				var i,str = [];
+				var len = x.length;
+				for(i=0;i<len;i++)
+				{
+					str[len-1-i]=x[i];
+				}
+				return str.join("");
+			}
+			
+			function findLongestWordLength(x)
+			{
+				var i, max=0;
+				for(i = 0; i < x.length; i++) 
+				{
+					if (x[i].length > max) 
+					{
+						max = x[i].length;
+					}
+				}
+				return max;
+			}
+			
+			function filterLongWords(x,no)
+			{
+				var i, arr = [], count=0;
+				for(i = 0; i < x.length; i++) 
+				{
+					if (x[i].length > no) 
+					{
+						arr[count]=x[i];
+						count++;
+					}
+				}
+				return arr;
+			}
+			
+			document.getElementById("ans").innerHTML = check("i");
+			document.getElementById("ans1").innerHTML = sum([1,2,3,4,5]);
+			document.getElementById("ans2").innerHTML = multiply([1,2,3,4,5]);
+			document.getElementById("ans3").innerHTML = findReverse("JavaScript");
+			document.getElementById("len").innerHTML = findLongestWordLength(["Hi","Hello","How are you?","Thank You"]);
+			document.getElementById("ans4").innerHTML = filterLongWords(["Hi","Hello","How are you?","Thank You"],5);
+		</script>
+	</body>
+</html>

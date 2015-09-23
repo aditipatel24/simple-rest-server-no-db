@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p id="demo"></p>
+<div id="FormDiv" style="width: 300px; float:left; height:200px; background:magenta; margin:20px">
+<form id="frm1"name="myForm" method="post">
+	First name: <input type="text" name="firstname" class="name">
+	<br><br>
+	Last name: <input type="text" name="lastname" class="name">
+	<br><br>
+	<input type="radio" name="gender" value="female" id="F"> Female
+	<br>
+	<input type="radio" name="gender" value="male" id="M"> Male
+	<br><br>
+	<select name="state" id="state">
+    <option value="s">State</option>
+    <option value="nj">NJ</option>
+    <option value="pa">PA</option>
+    <option value="ca">CA</option>
+    <option value="sc">SC</option>
+	</select>
+	<br>
+	<button type="button" value="submit" id="save" onclick="Save()">Save</button>
+ <br>
+</form> 
+</div>
+
+<div id="ViewDiv" style="width: 300px; float:left; height:200px; background:magenta; margin:20px">
+	<button type="button" value="edit" id="edit" onclick="Edit()" disabled>Edit</button>
+</div>
+		<script>
+		
+		function Save()
+		{
+			dv = document.getElementById("FormDiv").getElementsByClassName("name");
+			var e = document.getElementById("edit").disabled=false;
+			 for(i=0;i<dv.length;i++)
+			 {
+				var c=document.createElement("li");
+				d = document.createTextNode(dv[i].value);
+				c.appendChild(d);
+				y = document.getElementById("ViewDiv");
+				cc=	y.appendChild(c);
+				dv[i].value="";
+			 }
+			/*var f =document.getElementById("state").selectedIndex;
+			var k =document.getElementById("state").options;
+			var opt=k[f];
+			console.log("k",k);
+			console.log("f",f);
+			console.log(opt);
+				var newLi=document.createElement("li");
+				var newText = document.createTextNode(opt.text);
+				newLi.appendChild(newText);
+				var z = document.getElementById("ViewDiv");
+				z.appendChild(newLi);*/
+		}
+		function Edit()
+		{		
+				var vd = document.getElementsByTagName("input")[0].setAttribute("name","cc.innerHTML");
+				console.log(vd);
+				vd.textContent=cc.innerHTML;
+				console.log(vd);
+				console.log(cc.innerHTML);
+				//ee=cc.appendChild(vd);
+				//console.log(ee.value);
+		}
+		
+</script>
+</body>
+</html>
+

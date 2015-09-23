@@ -1,0 +1,75 @@
+h1 h2 h3 h4 {
+	margin:0;
+	padding:0;
+}
+p{
+	margin:0 0 1em 0;
+	font-size:93%;
+	line-height:1.5em;
+	text-align: normal;
+}
+body{
+	font-family:Helvetica,Arial,sans-serif;
+	padding:0;
+	margin:0;
+	background-color:#FFFFFF;
+}
+img{
+	max-width:400px;
+	height:auto;
+	margin:0 0 10px 0;
+	position:relative;
+}
+div.header{
+	color:#fff;
+	background-color:#009688;
+}
+
+/* body content */ 
+div .body-content {
+	padding:50px 0;
+	background-color:#FFF;
+}
+/* thirds */
+ div.one-third{
+	float:left;
+	background:pink; 
+}
+
+div.one-third-second{
+	margin:0;
+	
+} 
+div.one-third-last{
+	margin:0;
+	
+} 
+/* main column */
+div.main{
+	width:65%;
+	float:left;
+	margin-right:5%;
+}
+div.nav ul li{
+	list-style-type:none;
+	display:inline;
+	padding:5px;
+	margin: 0;
+	float:left;
+}
+div.two-columns{
+	width: 500px; 
+	float:left; 
+}
+div.innersection{
+	width:33%;
+	float:left;
+	background:red; 
+	display: block;
+	position:relative;
+	-webkit-column-count: 3;
+	column-count: 3;
+}
+.clearfix {
+    overflow: auto;
+}

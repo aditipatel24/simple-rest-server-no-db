@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+<style>
+#myDiv {
+    border: thick solid blue;
+}
+
+</style>
+<h1>DOM exercises </h1>
+
+<p></p>
+
+<form name="myForm" method="post">
+	First name: <input type="text" name="firstname" id="firstname">
+	<br><br>
+
+	<input type="button" value="submit" onclick="Validate()">
+	<br>
+	</form> 
+	<div id="myDiv">this is div</div>
+		<script>
+		function Validate()
+		{
+			var FN = document.getElementById("firstname"); 
+			console.log(FN.value);
+			document.getElementById("myDiv").style.borderColor=FN.value; 
+			isValidcolor(FN.value);
+		}
+		function isValidcolor(c)
+		{	
+		//	var FN = document.getElementById("firstname"); 
+			//console.log(FN.value);
+			var col=["red","green","blue","brown"];
+			for (i=0;i<col.length;i++)
+			{	
+				console.log(i);
+				if(c==col[i])
+				{
+					alert("this is valid color");
+					return true;
+				}
+				else
+				{
+					alert("enter valid color");
+					return false;
+				}
+			}
+			
+		}
+</script>
+</body>
+</html>

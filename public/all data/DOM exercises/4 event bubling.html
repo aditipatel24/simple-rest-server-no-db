@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+	<ul >
+    <li id ="l1" data-url="https://www.facebook.com">facebook.com</li>
+   <li id="l2" data-url="http://google.com"> google.com</li>
+   <li id="l3" data-url="http://twitter.com"> twitter.com</li>
+   <li id="l4" data-url="http://youtube.com"> youtube.com</li>
+</ul>
+
+<script>
+		var b= document.getElementsByTagName("li");
+		for(var i=0;i<b.length;i++)
+		{
+			b[i].addEventListener("click", chkurl);
+			console.log(b[i].innerHTML);
+		}
+		function chkurl()
+		{ 	
+			console.log(this);
+			this.getAttribute("data-url");
+			window.open(this.getAttribute("data-url"),"_blank");
+		}
+		
+	
+</script>
+</body>
+</html>

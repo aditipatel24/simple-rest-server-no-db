@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+<form id="frm1" name="myForm" method="post">
+	
+	<input type="checkbox" name="friut">Orange
+	<br>
+	<input type="checkbox" name="fruit" value="mango">Mango
+	<br>
+	<input type="checkbox" name="friut" value="grape">Grape
+	<br>
+	<input type="checkbox" name="fruit" value="strawberry">Strawberry
+	<br>
+	<input type="checkbox" name="friut" value="cherry">Cherry
+	<br>
+	<button type="button" value="submit" id="add">Add</button>
+</form> 
+</div>
+
+<div id="ViewDiv" class="mdiv">
+	
+</div>
+		<script>
+		var bt = document.getElementById("add");
+		bt.addEventListener("click",AddNF);
+		var b= document.getElementsByTagName("input");
+		for(var i=0;i<b.length;i++)
+		{
+			b[i].addEventListener("click", chkfruit);
+			console.log(b[i].innerHTML);
+		}
+		
+		function AddNF()
+		{
+				var pp = prompt("Add more fruit:");
+			//	console.log(p);
+				var n=document.createElement("b");
+				var n1=document.createTextNode(pp);
+
+				var chk = document.createElement("input");
+				chk.setAttribute("type","checkbox");
+				chk.setAttribute("value",pp);
+				chk.setAttribute("name","friut");
+				n.appendChild(n1);
+				
+				//var dc = document.createTextNode(p);
+			//	console.log(chk);
+				var pa = document.getElementById("mydiv");
+				var ck = pa.appendChild(chk);
+				var dcp = pa.appendChild(n);
+				console.log(dcp);
+				var b2 = document.getElementsByTagName("input");
+				console.log(b2);
+				for(var k=0;k<b2.length;k++)
+				{
+					b2[k].addEventListener("click", chkfruit);
+					console.log(b2[k]);
+				}
+		}
+		
+			function chkfruit()
+			{
+						if(this.checked)
+						{
+						console.log(this);
+						var c=document.createElement("li");
+						d = document.createTextNode(this.value);
+						var dd =c.appendChild(d);
+						console.log(dd);
+						y = document.getElementById("ViewDiv");
+						var cc=y.appendChild(c);
+						console.log(cc);
+						}	
+						else
+						{
+							var z=document.getElementsByTagName("li");
+							for(var j=0;j<z.length;j++)
+							{
+								if(this.value === z[j].innerHTML)
+								{
+									var e=document.getElementById("ViewDiv").removeChild(z[j]);
+									console.log(e);
+								}
+							}
+						}
+			}
+		
+</script>
+</body>
+</html>

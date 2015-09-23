@@ -1,0 +1,22 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		
+		var sumTill=function(number){
+		if ((number==0)||(number==1)) {
+
+			return 1;
+		}
+		else
+		{
+			return(number*sumTill(number-1));
+		}
+		};
+		var result=sumTill(4);
+		console.log("multiply of[1,2,3,4]= " + result);
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		var reverse=function(string){
+		var newStr="";
+		for(var i=string.length-1;i>=0;i--)
+		{
+			newStr +=string[i];
+		}
+		return newStr;
+		};
+		reverse("aditi");
+	
+		</script>
+	</body>
+</html>
+

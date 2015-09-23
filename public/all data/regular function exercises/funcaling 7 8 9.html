@@ -1,0 +1,31 @@
+<html>
+    
+    <body>
+        <h1>Hiiii</h1>
+		<script>
+			var ATM = function(number) {
+			var number=prompt("Enter Amount you want to withdraw");
+			if(isNaN(number))
+			  {
+				  return "This is not a number";
+			  }
+			//  console.log(typeof(number));
+			  
+			  if(parseInt(number) % parseInt('20') == 0)
+			  {  
+				console.log("your amount is ready");
+			  }
+
+			  else
+			   {	console.log("Please enter multiples of 20");
+				 
+			   }  
+	  
+	};
+
+console.log(ATM());
+
+        </script>
+    </body>
+</html>
+

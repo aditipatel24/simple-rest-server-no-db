@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p id="demo"></p>
+
+<form id="frm1"name="myForm" method="post">
+	First name: <input type="text" name="firstname" id="fname">
+	<br><br>
+	Last name: <input type="text" name="lastname" id="lname">
+	<br><br>
+	<div id="f">
+	<input type="radio" name="gender" value="female" id="F"> Female
+	<br>
+	</div>
+	<div id="m">
+	<input type="radio" name="gender" value="male" id="M"> Male
+	<br><br>
+	</div>
+	<button type="button" value="submit" id="save" onclick="Save()">Save</button>
+ <br>
+
+</form> 
+
+		<script>
+		
+		function Save()
+		{
+			var fn = document.getElementById("fname");
+			var ln = document.getElementById("lname");
+			console.log(fn);
+			var f = document.getElementById("F");
+			var mal = document.getElementById("M");
+			var ff = document.getElementById("f");
+			var mm = document.getElementById("m");
+			console.log(f);
+			if(fn.value !='')
+			{
+				f.checked = true;
+				alert("checked");
+				if(f.checked==true)
+				{
+				ff.style.backgroundColor = "rgb(255, 0, 0)";
+				}
+			}
+			else
+			{
+			alert("please enter only in one text box");
+			}
+			if(ln.value !='')
+			{
+				mal.checked = true;
+				if(mal.checked==true)
+				{
+				mm.style.backgroundColor = "rgb(0, 255, 0)";
+				}
+			}
+		}
+		
+		
+</script>
+</body>
+</html>
+

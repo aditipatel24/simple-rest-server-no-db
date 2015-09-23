@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+  .mdiv {
+  width: 300px; 
+  float:left; 
+  height:200px; 
+  background:magenta; 
+  padding:20px;
+  border-style:solid
+  }
+  </style>
+  		<script>
+		$(document).ready(function(){
+			$('#mydiv').on('change',function(){
+			$('.allchklist').on('click','li input[type="checkbox"]',chkfruit);
+			$('.allchklist').on('click','li button',addNF);
+			}); 
+
+		});
+		function chkfruit(event)
+		{
+			var $input =$(event.target).prev();
+			var $input1 =$(event.target);
+			console.log($input);
+			console.log($input1);
+			//$input.prev()=true;
+			//var $bb=$('li').children().find('input[type=checkbox]');
+			//$bb.checked=true;
+			
+			if($input.is(":checked"))
+			{
+				var add=$input1.html();
+				console.log(add);
+				$('#ViewDiv').append("<p>"+add+"</p>")
+				console.log(add);
+			}
+			else
+			{
+				var rv=$('#ViewDiv').find('p');
+				console.log(rv);
+				for(var j=0;j<rv.length;j++)
+				{
+					if(input.value===$(rv[j]).html())
+					{
+						rv[j].remove();
+					}
+				}
+			}
+		}
+		function addNF()
+		{
+			console.log("hii");
+			var pp=prompt("Add more fruit:");
+			console.log(pp);
+			var txt=$("<p>"+pp+"</p>");
+			console.log(txt.html());
+			var aa=$('#mydiv').find('ul').append(txt);
+			var chk = $('<input/>').attr({ type: 'checkbox', name:'fruit', value:pp})
+			console.log(chk);
+			txt.append(chk);
+			var aa=$('#mydiv').find('ul').append(txt);
+		}		
+
+</script>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+<div id="mydiv" class="mdiv">
+	<ul class="allchklist" style="list-style-type:none">
+	<li>
+		<input type="checkbox" name="fruit" value="orange">
+		<span>Orange</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="mango">
+		<span>Mango</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="grape">
+		<span>Grape</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="strawberry">
+		<span>Strawberry</span>
+	</li>
+	<li>
+		<input type="checkbox" name="fruit" value="cherry">
+		<span>Cherry</span>
+	</li>
+	<li>
+		<button type="button" value="submit" id="add">Add</button>
+	</li>
+	</ul>
+</div>
+
+<div id="ViewDiv" class="mdiv">
+</div>	
+
+</body>
+</html>

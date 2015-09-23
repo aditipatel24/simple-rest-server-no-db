@@ -1,0 +1,48 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		function countCoins(coins,size)
+		{
+			this.coins=coins;
+			this.size=size;
+			this.display=function()
+			{
+				console.log("coin size " + this.size);
+			};
+		
+		}
+		
+		countCoins.prototype.display=function()
+		{
+			console.log("coin size " + this.size);
+		}
+		function totalCoin(coins,size)
+		{
+			this.coins=coins;
+			this.size=25;
+		/*	this.display=function()
+			{
+				console.log("coin size " + this.size);
+			};*/
+		
+		}
+		totalCoin.prototype=new countCoins();
+		totalCoin.prototype.display=function()
+		{
+			console.log("total coin size " + this.size);
+			console.log("total coin  " + this.coins);
+		}
+		
+		
+	var ccc=new countCoins(1,0.5);
+	ccc.display();
+	var ccc1=new totalCoin(2,0.10);
+	ccc1.display();
+		
+		</script>
+	</body>
+</html>
+
+

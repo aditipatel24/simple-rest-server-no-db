@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+
+Enter Fahrenheit: <input type="text" id="feren" onkeyup="FtoC()">
+<br>
+
+<div id="result">celcius:</div>
+	
+
+		<script type="text/javascript">
+		//document.getElementById("feren").addEventListener("keyup",FtoC);
+		function FtoC()
+		{
+			
+			var x = document.getElementById("feren");
+			console.log(x.value);
+				if(isNaN(x.value)) 
+				{
+				x.style.borderColor='red';
+				alert("enter valid in input");
+		
+				}
+			var c=(x.value - 32) * 5/9;
+						
+			document.getElementById("result").innerHTML = Math.round(c);
+			
+		}
+</script>
+</body>
+</html>
+

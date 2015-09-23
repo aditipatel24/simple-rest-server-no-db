@@ -1,0 +1,183 @@
+<!--<html>
+<head>
+    <title>Content</title>
+    <script language="javascript">
+        function copy() {
+            var data = document.getElementById('add').value;
+            document.getElementById('get').innerHTML += data + "<br/>";
+        }
+    </script>
+</head>
+<body>
+<style>
+ .printchatbox 
+    {border-width:thick 10px;border-style: solid; 
+    background-color:#fff;
+    line-height: 2;color:#6E6A6B;font-size: 14pt;text-align:left;float: middle;
+    border: 3px solid #969293;width:40%;}
+	</style>
+    <input type="text" name="add" id="add" />
+    <input type="button" name="but1" onclick="copy()" value="Add" />
+    <div id="get" class="keyword">
+    </div>
+	
+	<select name="select" style="background-color: #ff0000">
+	 <option style="background-color: #ff0000" value="1">Red</option>
+	 <option style="background-color: #ffffff" value="2">Green</option>
+	 <option style="background-color: #0000ff" value="3">Blue</option>
+	 </select>
+	 <select name="select" style="background-color: #ff0000" onchange="this.style.backgroundColor = this.options[this.selectedIndex].style.backgroundColor;">
+	<option style="background-color:yellow">Item 1</option>
+    <option style="background-color:lightyellow">Item 2</option>
+	</select>
+	<label>First</label><input type="text" name="n1" id="n1">
+<label>Second</label><input type="text" name="n2" id="n2"/>
+<div class='printchatbox' id='printchatbox'></div>
+
+<input type='text' name='fname' class='chatinput' id='chatinput'>
+<input type="button" value="copy" onClick="copy();" />
+	<script type="text/javascript">
+function copy()
+{
+    var n1 = document.getElementById("n1");
+    var n2 = document.getElementById("n2");
+    n2.value = n1.value;
+	n1.value="";
+	
+	var inputBox = document.getElementById('chatinput');
+
+inputBox.onkeyup = function(){
+    document.getElementById('printchatbox').innerHTML = inputBox.value;
+}
+}
+
+</script>
+
+
+<div class='printchatbox' id='printchatbox'></div>
+
+<input type='text' name='fname' class='chatinput' id='chatinput'>
+
+
+ </body>
+</html>-->
+
+ <!--<HTML>
+  <HEAD>
+    <TITLE>Test Input</TITLE>
+    <SCRIPT LANGUAGE="JavaScript">
+      function testResults (form) {
+      var TestVar1 = form.input[0].checked;
+      var TestVar2 = form.input[1].checked;
+        if (TestVar1 == true) {
+          form.textbox.value = "red";
+        } else if (TestVar2 == true){
+          form.textbox.value = "blue";
+        } else if (TestVar1 == false && TestVar2 == false) {
+          form.textbox.value = "";
+        }
+      }
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM NAME="myform" ACTION="" METHOD="POST">Choose a Color: <BR>
+  <INPUT TYPE="radio" NAME="input" VALUE="red">red<P>
+  <INPUT TYPE="radio" NAME="input" VALUE="blue">blue<P>
+  <INPUT TYPE="button" NAME="button" VALUE="Click" onClick="testResults(this.form)">
+  <P>Selected:</P> <INPUT TYPE="text" ID="textbox" NAME="selected" VALUE=""></div><p>
+
+</FORM>
+</BODY>
+</HTML>-->
+
+
+<!--<html>
+<head>
+<style type="text/css">
+#xbone {
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+#ps4 {
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+#wiiu {
+    position:absolute;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+</style>
+<script type="text/javascript">
+function xbox()
+    {
+        document.getElementById("xbone").style.visibility="visible";
+    }
+    function sony()
+     {
+        document.getElementById("xps4").style.visibility="visible";
+    }
+    function nintentdo()
+     {
+        ddocument.getElementById("wiiu").style.visibility="visible";
+    }
+</script>
+<img id="xbone" src="http://assets1.ignimgs.com/vid/thumbnails/user/2013/06/19/XboxOne1.jpg" alt="Xbox One" width="800" height="600">
+<img id="ps4" src="http://gamingbolt.com/wp-content/uploads/2013/06/ps4-hd-wallpapers.jpg" alt="Playstation 4" width="800" height="600">
+<img id="wiiu" src="http://www.digitaltrends.com/wp-content/uploads/2012/09/Wii-U.jpg" alt="Wii U" width="800" height="600">
+<input type="button" value="XBox One" onclick="xbox()">
+    <input type="button" value="Playstation 4" onclick="sony()">
+        <input type="button" value="WII U" onclick="nintendo()">
+</head>
+<body>
+
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript">
+    function unhide(divID) {
+    var item = document.getElementById(divID);
+    if (item) {
+    item.className=(item.className=='hidden')?'unhidden':'hidden';
+    }}
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <p class="text_header">Benjamin Midyette</p>
+        <p style="margin-top:-50px">Computer/Network Engineer, Web Developer</p>
+    </div>
+
+    <div class="content" align="left">
+        <p style="padding-top:20px">
+            <a href="javascript:unhide('link')" class="button">This is a link</a><br><br>
+            <a href="javascript:unhide('about')" class="button">About</a>
+        </p>
+    </div>
+
+    <div id="Resume" class="content2"></div>
+
+    <div id="link" class="hidden" style="position:absolute; left:300px; margin-top:-700px;">
+            <img alt="A Link" src="pictures/link.png" height="420" width="420">     
+    </div>
+
+    <div id="about" class="hidden">
+        <div class="content3">
+            <p>This is the about section.</p>
+            <p>It is currently still being worked on.</p>
+        </div>
+    </div>      
+    </body>
+</html>

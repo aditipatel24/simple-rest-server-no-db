@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First HTML</title>
+</head>
+<body>
+
+<h1>DOM exercises </h1>
+
+<p id="demo"></p>
+<div id="FormDiv" style="width: 300px; float:left; height:200px; background:magenta; margin:20px">
+<form id="frm1"name="myForm" method="post">
+	First name: <input id="text1" type="text" name="firstname" id="firstname" >
+ <br>
+	Last name: <input id="text2" type="text" name="lastname" id="lastname">
+	
+	<button type="button" value="copy" id="save" onclick="Save()">Save</button>
+ <br>
+</form> 
+</div>
+
+
+		<script>
+		function Save()
+		{
+			var x= document.getElementById("text1");
+			var y= document.getElementById("text2");
+			y.value=x.value;
+			x.value="";
+			/*var c=document.createElement("input");
+			var d = document.createTextNode(x.value);
+			c.appendChild(d);
+			var y = document.getElementById("text2");
+			console.log(y);
+			console.log(y.appendChild(c));
+			x.value="";*/
+			//document.getElementById("text1").value = document.getElementById("text2").value;
+		}
+		
+</script>
+</body>
+</html>
+

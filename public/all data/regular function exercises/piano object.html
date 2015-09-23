@@ -1,0 +1,42 @@
+<html>
+	
+	<body>
+		<h1>Hiiii</h1>
+		<script>
+		
+	var piano={
+	keys:["black","white"],
+	voicetype:["soprano","mezz0 soprano","contralto"],
+	totalkeys:function()
+	{
+		var i;
+		if(piano.keys[i]=="black")
+		{
+		console.log("sharp voice");
+		}
+		else
+		{
+			console.log("flat voice");
+		}
+	},
+	
+	checkVoice:function() {
+	for(var i=0;i<piano.voicetype.length;i++)
+	{
+		var g=piano.voicetype[i];
+		console.log(g);
+		
+	}
+	}
+	
+};
+piano.totalkeys();
+piano.checkVoice();
+		
+		</script>
+	</body>
+</html>
+
+
+
+
