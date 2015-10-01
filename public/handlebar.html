@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BootStrap Exercises </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="javascripts/handlebars.js"></script>
+	<style>
+		h2 span{color:gray;font-size:.8em;}
+	</style>
+</head>
+<body>
+	<ul class="tweets">
+		<script id="template" type="text/x-handlebars-template">
+			/*{{#each this}}
+				<li>
+					<h2>{{author}}{{#if age}} -<span>{{age}}</span>{{/if}}</h2>
+					<p>{{{tweets}}}</p>
+				</li>
+					{{#if quote}}
+						<h5>{{quote}}</h5>
+					{{else}}
+						<h5>author does not have a quote</h5>
+					{{/if}}
+			{{/each}}*/
+			{{#each this}}
+				<li>
+					<h2>{{fullName author}}</h2>
+					<p>{{{tweets}}}</p>
+				</li>
+					{{#if quote}}
+						<h5>{{quote}}</h5>
+					{{else}}
+						<h5>author does not have a quote</h5>
+					{{/if}}
+			{{/each}}				
+		</script>
+	</ul>
+	
+	<script>
+	(function(){
+		var data=[
+			{
+				author:{first:'aditi',last:'patel',age:27},
+				tweets:'learn jQuery',
+				quote:'hihihihihhih'
+			},
+			{
+				author:{first:'vatsal',last:'dave',age:45},
+				tweets:'learn jQuery',
+			}
+		];
+		
+		Handlebars.registerHelper('fullName',function(author){
+			return author.first +' '+ author.last + '-' + author.age;
+		});
+		var template = Handlebars.compile($('#template').html());
+		//console.log(template);
+		$('ul.tweets').append(template(data));
+		//console.log(temp);
+		
+	})();
+	</script>
+	</body>
+</html>
