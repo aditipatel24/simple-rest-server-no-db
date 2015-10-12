@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html data-ng-app="demoApp">
+<body>
+<div class="container">
+<h2>View 2</h2>
+Name:
+<input type="text" data-ng-model="filter.city" />
+  <ul>
+	<li data-ng-repeat="cust in customer | filter:filter.city |orderBy:'city'">
+	  {{ cust.name |uppercase}} - {{ cust.city }}
+	</li>
+  </ul>
+ 
+</div>
+</body>
+</html>
