@@ -55,7 +55,7 @@
 		
 	<div class="container col-sm-10" id="d1" data-ng-controller="itemctrl">
 	
-				<form class="form-inline" role="form">
+				<form class="form-inline" role="form" style="margin-left:9px;">
 					<div class="form-group">
 					  <label for="search">Search:</label>
 					  <input type="search" class="form-control" id="search" placeholder="Serach by item name" data-ng-model="searchtext">
@@ -82,7 +82,8 @@
 				<div class="page" data-ng-repeat="product in products |filter:searchtext">
 						<div class="alert alert-success" data-ng-model="hidedata" id="{{product.id}}">
 							<h4>{{product.itmname | uppercase}}</h4> 
-							<span class="glyphicon glyphicon-remove-sign pull-right" style="margin-left:80px" data-ng-model="newproduct.id" data-ng-click="deletedata(product.id)" id="{{product.id}}">{{product.id}}</span>
+							
+							<span class="glyphicon glyphicon-remove-sign pull-right close" style="margin-left:80px;cursor:pointer" data-ng-model="newproduct.id" data-ng-click="deletedata(product.id)" id="{{product.id}}"></span>
 							<a href="#" class="btn btn-primary pull-right" style="margin-bottom:30px">{{product.itmprice|currency}}</a>
 							<p>{{product.itmdesc}}</p>
 						</div>

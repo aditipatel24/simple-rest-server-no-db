@@ -4,7 +4,7 @@ app.factory('itmfactory',['$http',function($http){
 	return{	
 			getitem:function(dl){
 				$http.get('/products').success(function(data){
-				//dl(data);
+				dl(data);
 			});
 			}
 		  }
